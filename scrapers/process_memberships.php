@@ -27,6 +27,7 @@
 	while ($row = mysql_fetch_array($results)) {
 		$memberships = explode('; ',$row['memberships']);
 		$array[$row['country']]['country_name'] = $row['country'];
+		$array[$row['country']]['short_name'] = '';
 		$array[$row['country']]['shared_memberships'] = 0;
 	    for($i=0;$i<count($memberships);$i++){
 			$memberships[$i] = delete_all_between(' (',')',$memberships[$i]);
@@ -35,12 +36,23 @@
 			}
 		}
 	}
-		
+	
+	$mapdata = file_get_contents('mapjson.json');
+	$mapdata = json_decode($mapdata, true);
+
+	$mapdata = $mapdata['paths'];
+	$countrycodes = [];
+
+	foreach ($mapdata as $key => $value) {
+		$array[$mapdata[$key]['name']]['short_name'] = $key;
+	}
+
 	$array = array_values($array);
 
 	$json = '{';
 	foreach($array as $country) {
 		$json .= '"'.$country['country_name'].'":{';
+		$json .= '"short_name": '.$country['short_name'].'';
 		$json .= '"shared_memberships": '.$country['shared_memberships'].'';
 		$json .= '},';
 	}
