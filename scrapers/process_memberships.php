@@ -38,9 +38,14 @@
 		
 	$array = array_values($array);
 
-	// print_r($array['Austria']['shared_memberships']);
-
+	$json = '{';
 	foreach($array as $country) {
-		echo $country['country_name'] . ' | ' . $country['shared_memberships'] . '<br />';
+		$json .= '"'.$country['country_name'].'":{';
+		$json .= '"shared_memberships": '.$country['shared_memberships'].'';
+		$json .= '},';
 	}
+	$json = rtrim($json, ",");
+	$json .= '}';
+
+	echo $json;
 ?>
