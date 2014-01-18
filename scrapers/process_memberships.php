@@ -29,10 +29,12 @@
 		$array[$row['country']]['country_name'] = $row['country'];
 		$array[$row['country']]['short_name'] = '';
 		$array[$row['country']]['shared_memberships'] = 0;
+		$array[$row['country']]['score'] = 0;
 	    for($i=0;$i<count($memberships);$i++){
 			$memberships[$i] = delete_all_between(' (',')',$memberships[$i]);
 			if(in_array($memberships[$i],$homememberships)){
 				$array[$row['country']]['shared_memberships'] += 1;
+				$array[$row['country']]['score'] += 1;
 			}
 		}
 	}
@@ -49,15 +51,19 @@
 
 	$array = array_values($array);
 
-	$json = '{';
+	$json = '[';
 	foreach($array as $country) {
-		$json .= '"'.$country['country_name'].'":{';
-		$json .= '"short_name": '.$country['short_name'].'';
-		$json .= '"shared_memberships": '.$country['shared_memberships'].'';
-		$json .= '},';
+		if($country['country_name']!='' && $country['short_name']!='' && $country['shared_memberships']!=''){
+			$json .= '{';
+			$json .= '"long_name": "'.$country['country_name'].'",';
+			$json .= '"short_name": "'.$country['short_name'].'",';
+			$json .= '"shared_memberships": '.$country['shared_memberships'].',';
+			$json .= '"score": '.$country['score'].'';
+			$json .= '},';
+		}
 	}
 	$json = rtrim($json, ",");
-	$json .= '}';
+	$json .= ']';
 
 	echo $json;
 ?>
