@@ -53,10 +53,11 @@
       });
       $('#map1').vectorMap({
         map: 'world_mill_en',
+        backgroundColor: '#6bd4f0',
         focusOn: {
-          x: 0.5,
-          y: 0.5,
-          scale: 2
+          x: 1,
+          y: 1,
+          scale: 1
         },
         series: {
           regions: [{
@@ -80,9 +81,13 @@
   </script>
 </head>
 <body>
-  <div id="map1" style="width: 100%; height: 100%"></div>
-  <button id="focus-single">Focus on Australia</button>
-  <button id="focus-multiple">Focus on Australia and Japan</button>
-  <button id="focus-init">Return to the initial state</button>
+    <header>
+      <h1>Relations Tracker</h1>
+      <h2> by <a href="http://causehub.io">CauseHub</a></h2>
+    </header>
+    <div id="map1" style="width: 100%; height: 100%"></div>
+    <button id="focus-single">Focus on Australia</button>
+    <button id="focus-multiple">Focus on Australia and Japan</button>
+    <button id="focus-init">Return to the initial state</button>
 </body>
 </html>

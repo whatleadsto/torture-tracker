@@ -3,7 +3,31 @@ html, body{
     padding: 0;
     height: 100%;
     min-height: 100%;
+    background-color: #6bd4f0;
+    color: #fff;
 }
+
+header{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 100;
+    text-align: center;
+    display: inline;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
+
+h1, h2{
+    font-weight: 100;
+    width: auto;
+    margin: 0;
+}
+
+a{
+    color: #ccf0e4;
+    text-decoration: none;
+}
+
 
 .jvectormap-label {
     position: absolute;
