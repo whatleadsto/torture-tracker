@@ -26,6 +26,7 @@
 	$results = mysql_query("SELECT * FROM memberships WHERE country!='$home'");
 	while ($row = mysql_fetch_array($results)) {
 		$memberships = explode('; ',$row['memberships']);
+		$array[$row['country']]['country_name'] = $row['country'];
 		$array[$row['country']]['shared_memberships'] = 0;
 	    for($i=0;$i<count($memberships);$i++){
 			$memberships[$i] = delete_all_between(' (',')',$memberships[$i]);
@@ -35,5 +36,11 @@
 		}
 	}
 		
-	print_r($array);
+	$array = array_values($array);
+
+	// print_r($array['Austria']['shared_memberships']);
+
+	foreach($array as $country) {
+		echo $country['country_name'] . ' | ' . $country['shared_memberships'] . '<br />';
+	}
 ?>
