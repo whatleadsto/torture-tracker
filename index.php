@@ -90,9 +90,28 @@
               normalizeFunction: 'polynomial',
               values: score
             }]
+          },
+          onRegionLabelShow: function(event, label, code){
+            <?php
+            $json = '';
+            foreach ($api as $country) {
+              $json .= "if(code=='" . $country['short_name'] . "'){";
+              $json .= "label.text('" . $country['long_name'] . " Total:" . $country[score] . "' )";
+              $json .= "}
+              ";
+            }
+              $json = rtrim($json,',');
+              echo $json;
+
+            ?>
+
+            // if (code == 'CA') {
+            //   label.text('Bears, vodka, balalaika');
+            // }
           }
         });
       }
+
 
       drawMap(countryScore);
 
@@ -107,6 +126,21 @@
           drawMap(countryScore);
         }
       });
+
+      // $('#map1').vectorMap({
+      //   onLabelShow: function(event, label, code){
+      //     if (code == 'CA') {
+      //       console.log('canadaaa');
+      //       event.preventDefault();
+      //       label.text('Bears, vodka, balalaika');
+      //     }
+      //   // },
+      //   // onRegionOver: function(event, code){
+      //   //   if (code == 'CA') {
+      //   //     event.preventDefault();
+      //   //   }
+      //   }
+      // });
 
     })
   </script>
