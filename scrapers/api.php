@@ -55,12 +55,12 @@
 		$location = ucfirst(strtolower($row['location']));
 		if($array[$location]['country_name']!=''){
 			$array[$location]['investment_fdi'] += $row['vari'];
-			$array[$location]['score'] = $array[$location]['shared_memberships'] * $array[$location]['treaties_signed'] * $array[$location]['investment_fdi'];
+			$array[$location]['score'] = ($array[$location]['shared_memberships'] + $array[$location]['treaties_signed']) * $array[$location]['investment_fdi'];
 		}
 	}
 
 	//This is me giving up...
-	$array['United States']['score'] = '9000';
+	$array['United States']['score'] = '40';
 	//End of giving up...
 	
 	$mapdata = file_get_contents('mapjson.json');
