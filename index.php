@@ -47,13 +47,32 @@
       $api = json_decode($api,true); 
       ?>
 
-      var countryScore = <?php
+      var countryScore = {<?php
+              $json = '';
               foreach ($api as $country) {
-                $json .= "'" . $country['short_name'] . "' : '" . $country['score'] . "',";
+                $json .= "'" . $country['short_name'] . "':" . $country['score'] . ",";
               }
                 $json = rtrim($json,',');
                 echo $json;
-              ?>;
+              ?>};
+
+      var countryMemberships = {<?php
+              $json = '';
+              foreach ($api as $country) {
+                $json .= "'" . $country['short_name'] . "':" . $country['shared_memberships'] . ",";
+              }
+                $json = rtrim($json,',');
+                echo $json;
+              ?>};
+
+      var countryTreaties = {<?php
+              $json = '';
+              foreach ($api as $country) {
+                $json .= "'" . $country['short_name'] . "':" . $country['treaties_signed'] . ",";
+              }
+                $json = rtrim($json,',');
+                echo $json;
+              ?>};
 
       $('#map1').vectorMap({
         map: 'world_mill_en',
@@ -67,16 +86,7 @@
           regions: [{
             scale: ['#c70200', '#00c725'],
             normalizeFunction: 'polynomial',
-            values: {
-              <?php
-              foreach ($api as $country) {
-                $json .= "'" . $country['short_name'] . "' : '";
-                $json .= $country['score'] . "',";
-              }
-                $json = rtrim($json,',');
-                echo $json;
-              ?>
-            }
+            values: countryScore
           }]
         }
       });

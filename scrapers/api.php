@@ -47,6 +47,7 @@
 			$result = mysql_query("SELECT * FROM treaties WHERE location='$location'");
 			$totaltreaties = mysql_num_rows($result);
 			$array[$location]['treaties_signed'] += $totaltreaties;
+			$array[$location]['score'] += 10;
 		}
 	}
 	
