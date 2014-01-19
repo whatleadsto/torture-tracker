@@ -74,6 +74,15 @@
                 echo $json;
               ?>};
 
+      var incoming_investment = {<?php
+              $json = '';
+              foreach ($api as $country) {
+                $json .= "'" . $country['short_name'] . "':" . $country['investment_fdi'] . ",";
+              }
+                $json = rtrim($json,',');
+                echo $json;
+              ?>};
+
       function drawMap(score){
         $('#map1').empty();
         $('#map1').vectorMap({
@@ -143,6 +152,7 @@
       <form>
         <label><input type="radio" name="showgroup" alt="shared_memberships" id="shared_memberships" value="Shared Memberships"><span>Shared Memberships</span></input></label>
         <label><input type="radio" name="showgroup" alt="treaties_signed" id="treaties_signed" value="Treaties Signed"><span>Treaties Signed</span></input></label>
+         <label><input type="radio" name="showgroup" alt="incoming_investment" id="incoming_investment" value="Incoming Investment"><span>Incoming Investment</span></input></label>
         <label><input type="radio" name="showgroup" alt="total-relations" id="total-relations" value="All Relations" checked=true><span>All Relations</span></input></label>
       </form>
     </section>
