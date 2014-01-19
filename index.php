@@ -43,7 +43,7 @@
       var $ = jQuery;
 
       <?php 
-      $api = file_get_contents('http://localhost/scrapers/process_memberships.php');
+      $api = file_get_contents('http://localhost/scrapers/api.php');
       $api = json_decode($api,true); 
       ?>
 
