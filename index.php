@@ -121,13 +121,11 @@
       drawMap(countryScore);
 
       $( "input" ).on( "click", function() {
-        if($( "input:checked" ).val()){
-          $( "#log" ).html( "Showing " + $( "input:checked" ).val());
-          var scoreType = $( "input:checked" ).attr('name');
+        if($( "input:checked" ).val()!='All Relations'){
+          var scoreType = $( "input:checked" ).attr('alt');
           eval("drawMap(" + scoreType + ");");
         }
         else{
-          $( "#log" ).empty();
           drawMap(countryScore);
         }
       });
@@ -142,11 +140,10 @@
     </header>
     <div id="map1" style="width: 100%; height: 100%"></div>
     <section class="options">
-      <span id="log"></span>
       <form>
-        <label><input type="checkbox" name="shared_memberships" id="shared_memberships" value="Shared Memberships"><span>Shared Memberships</span></input></label>
-        <label><input type="checkbox" name="treaties_signed" id="treaties_signed" value="Treaties Signed"><span>Treaties Signed</span></input></label>
-        <label><input type="checkbox" name="total-relations" id="total-relations" value="Total Relations" checked=true><span>Total Relations</span></input></label>
+        <label><input type="radio" name="showgroup" alt="shared_memberships" id="shared_memberships" value="Shared Memberships"><span>Shared Memberships</span></input></label>
+        <label><input type="radio" name="showgroup" alt="treaties_signed" id="treaties_signed" value="Treaties Signed"><span>Treaties Signed</span></input></label>
+        <label><input type="radio" name="showgroup" alt="total-relations" id="total-relations" value="All Relations" checked=true><span>All Relations</span></input></label>
       </form>
     </section>
 </body>
