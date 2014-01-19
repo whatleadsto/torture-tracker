@@ -29,8 +29,10 @@
 	$string = get_string_between($request, '<div id="content" class="results">','<div class="contentFooter">');
 	$treatytitle = get_string_between($string, '<strong>','</strong>');
 	$treatytype = get_string_between($string, '<strong>Treaty Type:</strong>&nbsp; ','<br><br>');
-	$treatylocation = get_string_between($string, '<strong>Place Of Signature:</strong>&nbsp; ','<br><br>');
+	$treatylocationcity = get_string_between($string, '<strong>Place Of Signature:</strong>&nbsp; ','<br><br>');
 	$treatydate = get_string_between($string, '<strong>Date Of Signature:</strong>&nbsp; ','<br><br>');
+	$treatylocation = get_string_between($string, '<td><strong>Action Date</strong></td><td><strong>Effective Date</strong></td> </tr>','<td>Signature</td>');
+	$treatylocation = get_string_between($treatylocation, '<td>','</td>');
 
 	if($treatytitle=='<font color="red">Invalid Treaty Id supplied, please run another search</font>'){
 		goto redohere;
