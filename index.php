@@ -92,11 +92,16 @@
             }]
           },
           onRegionLabelShow: function(event, label, code){
+            var scoreType = $( "input:checked" ).attr('name');
             <?php
             $json = '';
             foreach ($api as $country) {
-              $json .= "if(code=='" . $country['short_name'] . "'){";
-              $json .= "label.text('" . $country['long_name'] . " Total:" . $country[score] . "' )";
+              $json .= "if(code=='" . $country['short_name'] . "' && scoreType=='treaties_signed'){";
+              $json .= "label.text('" . $country['long_name'] . " | " . $country['treaties_signed'] . " treaties signed' )";
+              $json .= "}
+              ";
+              $json .= "if(code=='" . $country['short_name'] . "' && scoreType=='shared_memberships'){";
+              $json .= "label.text('" . $country['long_name'] . " | " . $country['shared_memberships'] . " shared memberships' )";
               $json .= "}
               ";
             }
@@ -127,21 +132,6 @@
         }
       });
 
-      // $('#map1').vectorMap({
-      //   onLabelShow: function(event, label, code){
-      //     if (code == 'CA') {
-      //       console.log('canadaaa');
-      //       event.preventDefault();
-      //       label.text('Bears, vodka, balalaika');
-      //     }
-      //   // },
-      //   // onRegionOver: function(event, code){
-      //   //   if (code == 'CA') {
-      //   //     event.preventDefault();
-      //   //   }
-      //   }
-      // });
-
     })
   </script>
 </head>
@@ -156,7 +146,7 @@
       <form>
         <input type="checkbox" name="shared_memberships" id="shared_memberships" value="Shared Memberships">Shared Memberships</input>
         <input type="checkbox" name="treaties_signed" id="treaties_signed" value="Treaties Signed">Treaties Signed</input>
-        <input type="checkbox" name="total-relations" id="total-relations" value="Total Relations">Total Relations</input>
+        <input type="checkbox" name="total-relations" id="total-relations" value="Total Relations" checked=true>Total Relations</input>
       </form>
     </section>
 </body>
