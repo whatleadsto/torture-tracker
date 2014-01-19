@@ -24,8 +24,15 @@ h1, h2{
 }
 
 a{
-    color: #ccf0e4;
+    color: #c6f0e9;
     text-decoration: none;
+}
+
+
+.options{
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 

@@ -42,15 +42,16 @@
     jQuery(function(){
       var $ = jQuery;
 
-      $('#focus-single').click(function(){
-        $('#map1').vectorMap('set', 'focus', 'AU');
-      });
-      $('#focus-multiple').click(function(){
-        $('#map1').vectorMap('set', 'focus', ['AU', 'JP']);
-      });
-      $('#focus-init').click(function(){
-        $('#map1').vectorMap('set', 'focus', 1, 0, 0);
-      });
+      // $('#focus-single').click(function(){
+      //   $('#map1').vectorMap('set', 'focus', 'AU');
+      // });
+      // $('#focus-multiple').click(function(){
+      //   $('#map1').vectorMap('set', 'focus', ['AU', 'JP']);
+      // });
+      // $('#focus-init').click(function(){
+      //   $('#map1').vectorMap('set', 'focus', 1, 0, 0);
+      // });
+
       $('#map1').vectorMap({
         map: 'world_mill_en',
         backgroundColor: '#6bd4f0',
@@ -86,8 +87,12 @@
       <h2> by <a href="http://causehub.io">CauseHub</a></h2>
     </header>
     <div id="map1" style="width: 100%; height: 100%"></div>
-    <button id="focus-single">Focus on Australia</button>
-    <button id="focus-multiple">Focus on Australia and Japan</button>
-    <button id="focus-init">Return to the initial state</button>
+    <section class="options">
+      <form>
+        <input type="checkbox" name="treaties-signed" id="treaties-signed" value="treaties-signed">Treaties Signed</input>
+        <input type="checkbox" name="total-relations" id="total-relations" value="total-relations">Total Relations</input>
+      </form>
+    </section>
 </body>
+
 </html>
