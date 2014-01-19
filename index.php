@@ -93,7 +93,25 @@
 
       $( "input" ).on( "click", function() {
         if($( "input:checked" ).val()){
-          $( "#log" ).html( "Showing " + $( "input:checked" ).val());          
+          $( "#log" ).html( "Showing " + $( "input:checked" ).val());
+          $("#map1").empty();
+          $('#map1').vectorMap({
+            map: 'world_mill_en',
+            backgroundColor: '#6bd4f0',
+            focusOn: {
+              x: 1,
+              y: 1,
+              scale: 1
+            },
+            series: {
+              regions: [{
+                scale: ['#c70200', '#00c725'],
+                normalizeFunction: 'polynomial',
+                values: countryTreaties
+              }]
+            }
+          });
+          // console.log('hello');        
         }
         else{
           $( "#log" ).empty();
