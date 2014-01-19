@@ -28,14 +28,14 @@
 		$memberships = explode('; ',$row['memberships']);
 		$array[$row['country']]['country_name'] = $row['country'];
 		$array[$row['country']]['short_name'] = '';
-		$array[$row['country']]['shared_memberships'] = 0;
-		$array[$row['country']]['treaties_signed'] = 0;
+		$array[$row['country']]['shared_memberships'] = 1;
+		$array[$row['country']]['treaties_signed'] = 1;
+		$array[$row['country']]['investment_fdi'] = 1;
 		$array[$row['country']]['score'] = 0;
 	    for($i=0;$i<count($memberships);$i++){
 			$memberships[$i] = delete_all_between(' (',')',$memberships[$i]);
 			if(in_array($memberships[$i],$homememberships)){
 				$array[$row['country']]['shared_memberships'] += 1;
-				$array[$row['country']]['score'] += 1;
 			}
 		}
 	}
@@ -47,7 +47,15 @@
 			$result = mysql_query("SELECT * FROM treaties WHERE location='$location'");
 			$totaltreaties = mysql_num_rows($result);
 			$array[$location]['treaties_signed'] += $totaltreaties;
-			$array[$location]['score'] += $totaltreaties;
+		}
+	}
+
+	$results = mysql_query("SELECT * FROM investment");
+	while ($row = mysql_fetch_array($results)) {
+		$location = ucfirst(strtolower($row['location']));
+		if($array[$location]['country_name']!=''){
+			$array[$location]['investment_fdi'] += $row['vari'];
+			$array[$location]['score'] = $array[$location]['shared_memberships'] * $array[$location]['treaties_signed'] * $array[$location]['investment_fdi'];
 		}
 	}
 	
@@ -71,6 +79,7 @@
 			$json .= '"short_name": "'.$country['short_name'].'",';
 			$json .= '"shared_memberships": '.$country['shared_memberships'].',';
 			$json .= '"treaties_signed": '.$country['treaties_signed'].',';
+			$json .= '"investment_fdi": '.$country['investment_fdi'].',';
 			$json .= '"score": '.$country['score'].'';
 			$json .= '},';
 		}
