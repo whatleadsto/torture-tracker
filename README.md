@@ -5,3 +5,11 @@ We hope it will blablabla
 
 
 ## Data validity
+
+
+## Installing
+
+- create local repo
+- create database in phpmyadmin
+- call it rewiredstate
+- import datasets/rewiredstate.sql
