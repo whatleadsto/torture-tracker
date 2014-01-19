@@ -56,7 +56,7 @@
                 echo $json;
               ?>};
 
-      var countryMemberships = {<?php
+      var shared_memberships = {<?php
               $json = '';
               foreach ($api as $country) {
                 $json .= "'" . $country['short_name'] . "':" . $country['shared_memberships'] . ",";
@@ -65,7 +65,7 @@
                 echo $json;
               ?>};
 
-      var countryTreaties = {<?php
+      var treaties_signed = {<?php
               $json = '';
               foreach ($api as $country) {
                 $json .= "'" . $country['short_name'] . "':" . $country['treaties_signed'] . ",";
@@ -74,47 +74,37 @@
                 echo $json;
               ?>};
 
-      $('#map1').vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: '#6bd4f0',
-        focusOn: {
-          x: 1,
-          y: 1,
-          scale: 1
-        },
-        series: {
-          regions: [{
-            scale: ['#c70200', '#00c725'],
-            normalizeFunction: 'polynomial',
-            values: countryScore
-          }]
-        }
-      });
+      function drawMap(score){
+        $('#map1').empty();
+        $('#map1').vectorMap({
+          map: 'world_mill_en',
+          backgroundColor: '#6bd4f0',
+          focusOn: {
+            x: 1,
+            y: 1,
+            scale: 1
+          },
+          series: {
+            regions: [{
+              scale: ['#c70200', '#00c725'],
+              normalizeFunction: 'polynomial',
+              values: score
+            }]
+          }
+        });
+      }
+
+      drawMap(countryScore);
 
       $( "input" ).on( "click", function() {
         if($( "input:checked" ).val()){
           $( "#log" ).html( "Showing " + $( "input:checked" ).val());
-          $("#map1").empty();
-          $('#map1').vectorMap({
-            map: 'world_mill_en',
-            backgroundColor: '#6bd4f0',
-            focusOn: {
-              x: 1,
-              y: 1,
-              scale: 1
-            },
-            series: {
-              regions: [{
-                scale: ['#c70200', '#00c725'],
-                normalizeFunction: 'polynomial',
-                values: countryTreaties
-              }]
-            }
-          });
-          // console.log('hello');        
+          var scoreType = $( "input:checked" ).attr('name');
+          eval("drawMap(" + scoreType + ");");
         }
         else{
           $( "#log" ).empty();
+          drawMap(countryScore);
         }
       });
 
@@ -130,7 +120,8 @@
     <section class="options">
       <span id="log"></span>
       <form>
-        <input type="checkbox" name="treaties-signed" id="treaties-signed" value="Treaties Signed">Treaties Signed</input>
+        <input type="checkbox" name="shared_memberships" id="shared_memberships" value="Shared Memberships">Shared Memberships</input>
+        <input type="checkbox" name="treaties_signed" id="treaties_signed" value="Treaties Signed">Treaties Signed</input>
         <input type="checkbox" name="total-relations" id="total-relations" value="Total Relations">Total Relations</input>
       </form>
     </section>
