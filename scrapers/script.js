@@ -1,9 +1,8 @@
 var runs = 14582;
-var runs = 10000;
 var totaldone = 0;
 
 function runScrape(){
-	for (var i=5001;i<=runs;i++){ 
+	for (var i=10001;i<=runs;i++){ 
 		makeRequest(i);
 	}
 }
