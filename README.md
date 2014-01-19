@@ -10,7 +10,6 @@ This is an API for tracking and qualifying several variables relating to the UK'
 - In PHP MyAdmin, create new database called "rewiredstate".
 - Create user with username: rewiredstate password: pass and grant global privileges.
 - Import the SQL database: datasets/rewiredstate.sql
-- 
 
 ## Issues
 
