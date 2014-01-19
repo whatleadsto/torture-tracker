@@ -28,6 +28,20 @@ a{
     text-decoration: none;
 }
 
+label{
+    font-size: 1.2em;
+    display: inline-block;
+    background-color: #c6f0e9;
+    color: #000;
+    padding: .2em;
+    margin-bottom: .5em;
+    cursor: pointer;
+    border-radius: .3em;
+}
+
+label:hover{
+    background-color: #84a09b;
+}
 
 .options{
     position: absolute;

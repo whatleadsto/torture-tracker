@@ -144,9 +144,9 @@
     <section class="options">
       <span id="log"></span>
       <form>
-        <input type="checkbox" name="shared_memberships" id="shared_memberships" value="Shared Memberships">Shared Memberships</input>
-        <input type="checkbox" name="treaties_signed" id="treaties_signed" value="Treaties Signed">Treaties Signed</input>
-        <input type="checkbox" name="total-relations" id="total-relations" value="Total Relations" checked=true>Total Relations</input>
+        <label><input type="checkbox" name="shared_memberships" id="shared_memberships" value="Shared Memberships"><span>Shared Memberships</span></input></label>
+        <label><input type="checkbox" name="treaties_signed" id="treaties_signed" value="Treaties Signed"><span>Treaties Signed</span></input></label>
+        <label><input type="checkbox" name="total-relations" id="total-relations" value="Total Relations" checked=true><span>Total Relations</span></input></label>
       </form>
     </section>
 </body>
