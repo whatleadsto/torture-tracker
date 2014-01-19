@@ -42,15 +42,18 @@
     jQuery(function(){
       var $ = jQuery;
 
-      // $('#focus-single').click(function(){
-      //   $('#map1').vectorMap('set', 'focus', 'AU');
-      // });
-      // $('#focus-multiple').click(function(){
-      //   $('#map1').vectorMap('set', 'focus', ['AU', 'JP']);
-      // });
-      // $('#focus-init').click(function(){
-      //   $('#map1').vectorMap('set', 'focus', 1, 0, 0);
-      // });
+      <?php 
+      $api = file_get_contents('http://localhost/scrapers/process_memberships.php');
+      $api = json_decode($api,true); 
+      ?>
+
+      var countryScore = <?php
+              foreach ($api as $country) {
+                $json .= "'" . $country['short_name'] . "' : '" . $country['score'] . "',";
+              }
+                $json = rtrim($json,',');
+                echo $json;
+              ?>;
 
       $('#map1').vectorMap({
         map: 'world_mill_en',
@@ -66,10 +69,9 @@
             normalizeFunction: 'polynomial',
             values: {
               <?php
-              $api = file_get_contents('http://localhost/scrapers/process_memberships.php');
-              $api = json_decode($api,true);
               foreach ($api as $country) {
-                $json .= "'" . $country['short_name'] . "' : '" . $country['score'] . "',";
+                $json .= "'" . $country['short_name'] . "' : '";
+                $json .= $country['score'] . "',";
               }
                 $json = rtrim($json,',');
                 echo $json;
@@ -78,6 +80,16 @@
           }]
         }
       });
+
+      $( "input" ).on( "click", function() {
+        if($( "input:checked" ).val()){
+          $( "#log" ).html( "Showing " + $( "input:checked" ).val());          
+        }
+        else{
+          $( "#log" ).empty();
+        }
+      });
+
     })
   </script>
 </head>
@@ -88,9 +100,10 @@
     </header>
     <div id="map1" style="width: 100%; height: 100%"></div>
     <section class="options">
+      <span id="log"></span>
       <form>
-        <input type="checkbox" name="treaties-signed" id="treaties-signed" value="treaties-signed">Treaties Signed</input>
-        <input type="checkbox" name="total-relations" id="total-relations" value="total-relations">Total Relations</input>
+        <input type="checkbox" name="treaties-signed" id="treaties-signed" value="Treaties Signed">Treaties Signed</input>
+        <input type="checkbox" name="total-relations" id="total-relations" value="Total Relations">Total Relations</input>
       </form>
     </section>
 </body>
