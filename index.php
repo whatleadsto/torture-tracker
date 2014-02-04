@@ -43,7 +43,8 @@
       var $ = jQuery;
 
       <?php 
-      $api = file_get_contents('http://localhost/scrapers/api.php');
+      $api = file_get_contents('http://relationstracker.causehub.io/scrapers/api.php');
+      echo $api;
       $api = json_decode($api,true); 
       ?>
 
@@ -104,7 +105,7 @@
             var scoreType = $( "input:checked" ).attr('name');
             <?php
             $json = '';
-            foreach ($api as $country) {
+            foreach($api as $country) {
               $json .= "if(code=='" . $country['short_name'] . "' && scoreType=='treaties_signed'){";
               $json .= "label.text('" . $country['long_name'] . " | " . $country['treaties_signed'] . " treaties signed' )";
               $json .= "}
