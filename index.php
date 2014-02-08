@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>jVectorMap demo</title>
+  <title><?php $title = 'Torture Tracker'; echo $title; ?></title>
   <link rel="stylesheet" media="all" href="jquery-jvectormap.css"/>
   <script src="tests/assets/jquery-1.8.2.js"></script>
   <script src="jquery-jvectormap.js"></script>
@@ -145,7 +145,7 @@
 </head>
 <body>
     <header>
-      <h1>Relations Tracker</h1>
+      <h1><?php echo $title; ?></h1>
       <h2> by <a href="http://causehub.io">CauseHub</a></h2>
     </header>
     <div id="map1" style="width: 100%; height: 100%"></div>
