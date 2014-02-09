@@ -130,7 +130,7 @@
         if($( "input:checked" ).val()!='All Relations'){
           var scoreType = $( "input:checked" ).attr('alt');
           eval("drawMap(" + scoreType + ");");
-          document.body.style.backgroundImage="url('http://upload.wikimedia.org/wikipedia/commons/3/3b/Boeing_employees_protest_meeting_in_Seattles_City_Hall_Park,_1943.gif')";
+          document.body.style.backgroundImage="url('images/"+scoreType+".jpg')";
         }
         else{
           drawMap(countryScore);
@@ -151,7 +151,7 @@
         <label><input type="radio" name="showgroup" alt="shared_memberships" id="shared_memberships" value="Shared Memberships"><span>Shared Memberships</span></input></label>
         <label><input type="radio" name="showgroup" alt="treaties_signed" id="treaties_signed" value="Treaties Signed"><span>Treaties Signed</span></input></label>
          <label><input type="radio" name="showgroup" alt="incoming_investment" id="incoming_investment" value="Incoming Investment"><span>Incoming Investment</span></input></label>
-        <label><input type="radio" name="showgroup" alt="total-relations" id="total-relations" value="All Relations" checked=true><span>All Relations</span></input></label>
+        <label><input type="radio" name="showgroup" alt="total_relations" id="total-relations" value="All Relations" checked=true><span>All Relations</span></input></label>
       </form>
     </section>
 </body>
