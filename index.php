@@ -96,7 +96,7 @@
           },
           series: {
             regions: [{
-              scale: ['#c70200', '#00c725'],
+              scale: ['#000000', '#fff100'],
               normalizeFunction: 'polynomial',
               values: score
             }]
