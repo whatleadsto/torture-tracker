@@ -88,7 +88,7 @@
         $('#map1').empty();
         $('#map1').vectorMap({
           map: 'world_mill_en',
-          backgroundColor: '#6bd4f0',
+          backgroundColor: 'none',
           focusOn: {
             x: 1,
             y: 1,
@@ -130,6 +130,7 @@
         if($( "input:checked" ).val()!='All Relations'){
           var scoreType = $( "input:checked" ).attr('alt');
           eval("drawMap(" + scoreType + ");");
+          document.body.style.backgroundImage="url('http://upload.wikimedia.org/wikipedia/commons/3/3b/Boeing_employees_protest_meeting_in_Seattles_City_Hall_Park,_1943.gif')";
         }
         else{
           drawMap(countryScore);
@@ -142,7 +143,7 @@
 <body>
     <header>
       <h1><?php echo $title; ?></h1>
-      <h2> by <a href="http://causehub.io">CauseHub</a>, <a href="http://bcinformetrics.co.uk" target="_blank">Black Country Infometrics</a> and <a href="http://amnesty.org.uk" target="_blank">Amnesty International</a></h2>
+      <h2> by <a href="http://causehub.io">CauseHub</a>, <a href="http://bcinformetrics.co.uk" target="_blank">Black Country Infometrics</a> and <a href="http://amnesty.org.uk" target="">Amnesty International</a></h2>
     </header>
     <div id="map1" style="width: 100%; height: 100%"></div>
     <section class="options">
