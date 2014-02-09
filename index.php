@@ -119,10 +119,6 @@
               echo $json;
 
             ?>
-
-            // if (code == 'CA') {
-            //   label.text('Bears, vodka, balalaika');
-            // }
           }
         });
       }
@@ -146,7 +142,7 @@
 <body>
     <header>
       <h1><?php echo $title; ?></h1>
-      <h2> by <a href="http://causehub.io">CauseHub</a></h2>
+      <h2> by <a href="http://causehub.io">CauseHub</a>, <a href="http://bcinformetrics.co.uk" target="_blank">Black Country Infometrics</a> and <a href="http://amnesty.org.uk" target="_blank">Amnesty International</a></h2>
     </header>
     <div id="map1" style="width: 100%; height: 100%"></div>
     <section class="options">
