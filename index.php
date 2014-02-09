@@ -38,9 +38,18 @@
 
   <script src="tests/assets/jquery-jvectormap-world-mill-en.js"></script>
   <script>
+
     jQuery.noConflict();
+
+    // jQuery(function($){
+    //     $('path').click(function(){
+    //       console.log('test');
+    //     });
+    // });
+
     jQuery(function(){
       var $ = jQuery;
+
 
       <?php 
       $api = file_get_contents('http://relationstracker.causehub.io/scrapers/api.php');
@@ -131,12 +140,21 @@
           var scoreType = $( "input:checked" ).attr('alt');
           eval("drawMap(" + scoreType + ");");
           document.body.style.backgroundImage="url('images/"+scoreType+".jpg')";
-
+          $('.popup').bPopup({
+            modalClose: false,
+            opacity: 0.6,
+            positionStyle: 'fixed' //'fixed' or 'absolute'
+          });
         }
         else{
           drawMap(countryScore);
           document.body.style.backgroundImage="url('images/"+scoreType+".jpg')";
+
         }
+      });
+
+      $('path[data-code="RU"]').click(function(){
+        console.log('test');
       });
 
     })
@@ -156,6 +174,10 @@
         <label><input type="radio" name="showgroup" alt="total_relations" id="total-relations" value="All Relations" checked=true><span>All Relations</span></input></label>
       </form>
     </section>
+    <div class="popup">
+      <p>stufsufufuffuu</p>
+    </div>
+
 </body>
 
 </html>
