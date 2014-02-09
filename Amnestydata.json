@@ -1,0 +1,207 @@
+[
+  {
+    "Country":"Azerbaijan ",
+    "Score":22,
+    "Problem":"Prisoner of Conscience; Freedom of Association; Torture; Unfair Trial; Freedom of Expression; Medical Concerns"
+  },
+  {
+    "Country":"Bahrain ",
+    "Score":11,
+    "Problem":"Impunity; Arbitrary Arrest; Freedom of Expression, Prisoner of Conscience"
+  },
+  {
+    "Country":"Belarus ",
+    "Score":10,
+    "Problem":"LGBT; Torture; Freedom of Expression; Freedom of Association"
+  },
+  {
+    "Country":"Cambodia ",
+    "Score":9,
+    "Problem":"Unfair Trial; Impunity; Torture"
+  },
+  {
+    "Country":"China ",
+    "Score":45,
+    "Problem":"Prisoner of Conscience; Torture; Medical Concerns; Censorship; Human Rights; Freedom of Expression; Freedom of Association; Unfair Trial"
+  },
+  {
+    "Country":"Democratic People's Republic of Korea (North Korea) ",
+    "Score":19,
+    "Problem":"Prisoner of Conscience; Torture; Freedom of Expression; Human Rights; Medical Concerns"
+  },
+  {
+    "Country":"Egypt ",
+    "Score":18,
+    "Problem":"Arbitrary Arrest; Torture; Medical Concerns; Freedom of Expression"
+  },
+  {
+    "Country":"India ",
+    "Score":6,
+    "Problem":"Arbitrary Arrest; Freedom of Expression; Torture; Prisoner of Conscience"
+  },
+  {
+    "Country":"Indonesia ",
+    "Score":12,
+    "Problem":"Prisoner of Conscience; Torture; Freedom of Expression; Impunity; Unfair Trial"
+  },
+  {
+    "Country":"Iran ",
+    "Score":40,
+    "Problem":"Death Sentence; Freedom of Expression; Freedom of Association; Torture; "
+  },
+  {
+    "Country":"Iraq ",
+    "Score":20,
+    "Problem":"Death Penalty; Torture; Unfair Trial"
+  },
+  {
+    "Country":"Italy ",
+    "Score":5,
+    "Problem":"Torture; Abduction; Rendition"
+  },
+  {
+    "Country":"Japan ",
+    "Score":10,
+    "Problem":"Death Penalty; Torture; Unfair Trial"
+  },
+  {
+    "Country":"Kazakhstan ",
+    "Score":5,
+    "Problem":"Torture; Impunity; Unfair Trial"
+  },
+  {
+    "Country":"Kyrgyzstan ",
+    "Score":10,
+    "Problem":"Illegal Detention; Impunity Torture; Unfair Trial; Prisoner of Conscience"
+  },
+  {
+    "Country":"Laos ",
+    "Score":10,
+    "Problem":"Prisoner of Conscience; Unfair Trial; Torture"
+  },
+  {
+    "Country":"Libya ",
+    "Score":10,
+    "Problem":"Torture; Unfair Trial; Death Penalty"
+  },
+  {
+    "Country":"Macedonia ",
+    "Score":5,
+    "Problem":"Illegal Detention; Torture; Impuniy"
+  },
+  {
+    "Country":"Mauritania ",
+    "Score":5,
+    "Problem":"Death Penalty; Torture; Unfair Trial"
+  },
+  {
+    "Country":"Mexico ",
+    "Score":4,
+    "Problem":"Illegal Detention; Torture; Unfair Trial"
+  },
+  {
+    "Country":"Montenegro ",
+    "Score":4,
+    "Problem":"Torture"
+  },
+  {
+    "Country":"Morocco ",
+    "Score":4,
+    "Problem":"Torture; Unfair Trial"
+  },
+  {
+    "Country":"Myanmar ",
+    "Score":4,
+    "Problem":"Prisoner of Conscience; Medical Concerns; Torture; Freedom of Expression"
+  },
+  {
+    "Country":"Nigeria ",
+    "Score":4,
+    "Problem":"Death Penalty; Illegal Detention; Medical Concerns"
+  },
+  {
+    "Country":"Palestinian Authority ",
+    "Score":4,
+    "Problem":"Illegal Detention"
+  },
+  {
+    "Country":"Philippines ",
+    "Score":8,
+    "Problem":"Impunity; Torture; Illegal Detention"
+  },
+  {
+    "Country":"Poland ",
+    "Score":4,
+    "Problem":""
+  },
+  {
+    "Country":"Russian  Federation ",
+    "Score":16,
+    "Problem":"Illegal Detention; Impunity; Torture; Prisoner of Conscience; Freedom of Expression; Freedom of Association"
+  },
+  {
+    "Country":"Saudi Arabia ",
+    "Score":4,
+    "Problem":"Prisoner of Conscience, Torture"
+  },
+  {
+    "Country":"Sudan ",
+    "Score":8,
+    "Problem":"Illegal Detention; Impunity; Torture; Prisoner of Conscience; Freedom of Expression; Freedom of Association"
+  },
+  {
+    "Country":"Swaziland ",
+    "Score":4,
+    "Problem":""
+  },
+  {
+    "Country":"Syria ",
+    "Score":8,
+    "Problem":"Illegal Detention; Impunity; Torture; Prisoner of Conscience; Freedom of Expression; Freedom of Association"
+  },
+  {
+    "Country":"Taiwan ",
+    "Score":4,
+    "Problem":"Death Penalty; Torture; Unfair Trial"
+  },
+  {
+    "Country":"Tajikistan ",
+    "Score":4,
+    "Problem":"Impunity; Torture"
+  },
+  {
+    "Country":"Turkey ",
+    "Score":4,
+    "Problem":"Torture; Unfair Trial; Prisoner of Conscience"
+  },
+  {
+    "Country":"Turkmenistan ",
+    "Score":4,
+    "Problem":"Torture; Unfair Trial; Prisoner of Conscience"
+  },
+  {
+    "Country":"Ukraine ",
+    "Score":9,
+    "Problem":"Torture; Illegal Detention; Prisoner of Conscience"
+  },
+  {
+    "Country":"USA ",
+    "Score":12,
+    "Problem":"Torture; Illegal Detention; Impunity"
+  },
+  {
+    "Country":"Uzbekistan ",
+    "Score":2,
+    "Problem":"Unfair Trial; Torture; Prisoner of Conscience; Freedom of Expression"
+  },
+  {
+    "Country":"Vietnam ",
+    "Score":2,
+    "Problem":"Freedom of expression; Prisoner of Conscience; Torture; Unfair Trial"
+  },
+  {
+    "Country":"Zimbabwe ",
+    "Score":2,
+    "Problem":"Torture; Freedom of Expression"
+  }
+]
