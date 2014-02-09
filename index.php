@@ -96,7 +96,7 @@
           },
           series: {
             regions: [{
-              scale: ['#000000', '#fff100'],
+              scale: ['#ffffff', '#ff0054'],
               normalizeFunction: 'polynomial',
               values: score
             }]
@@ -131,9 +131,11 @@
           var scoreType = $( "input:checked" ).attr('alt');
           eval("drawMap(" + scoreType + ");");
           document.body.style.backgroundImage="url('images/"+scoreType+".jpg')";
+
         }
         else{
           drawMap(countryScore);
+          document.body.style.backgroundImage="url('images/"+scoreType+".jpg')";
         }
       });
 
